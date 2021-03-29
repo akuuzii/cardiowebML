@@ -23,7 +23,7 @@ def load_data(data_dir,dataset_type):
     else:
         cols = col_names
     df = pd.read_excel(data_dir,engine='openpyxl',sheet_name=dataset_type,header=0,usecols=cols)
-    x_train, x_test = train_test_split(df, test_size=0.2, random_state=123, stratify=df['1year_obs_event'])  # 42
+    x_train, x_test = train_test_split(df, test_size=0.3, random_state=123, stratify=df['1year_obs_event'])  # 42
 
     y_train = x_train['1year_obs_event'].copy()
     key_train = x_train['id'].copy()
